@@ -1,0 +1,43 @@
+{
+  "name": "vanilla-dialogs",
+  "version": "0.0.1",
+  "description": "Promise-based confirm, alert and prompt dialogs",
+  "main": "index.js",
+  "scripts": {
+    "test": "browser-sync start -s \"test/visual\" -s \"dist\" --files \"dist/vanilla-dialogs.umd.min.js\" \"test/visual/**/*\"",
+    "build": "rollup -c",
+    "build:watch": "npm run build -- -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thiamsantos/vanilla-dialogs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thiamsantos/vanilla-dialogs/issues"
+  },
+  "homepage": "https://github.com/thiamsantos/vanilla-dialogs#readme",
+  "devDependencies": {
+    "autoprefixer": "^7.1.2",
+    "babel-core": "^6.25.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.0",
+    "browser-sync": "^2.18.12",
+    "cssnano": "^3.10.0",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-modules": "^0.8.0",
+    "rollup": "^0.45.2",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-filesize": "^1.4.2",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-postcss": "^0.5.3",
+    "rollup-plugin-uglify": "^2.0.1",
+    "rollup-watch": "^4.3.1"
+  },
+  "dependencies": {
+    "vanilla-commons": "^1.1.0"
+  }
+}
