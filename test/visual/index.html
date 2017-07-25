@@ -14,19 +14,44 @@
   </head>
   <body>
     <button id="alert-button">Show alert!</button>
+    <button id="alert-button-custom">
+      Show alert with custom text buttons!
+    </button>
     <button id="confirm-button">Show confirm!</button>
+    <button id="confirm-button-custom">
+      Show confirm with custom text!
+    </button>
     <script src="vanilla-dialogs.umd.min.js"></script>
     <script>
       document.getElementById('alert-button')
         .addEventListener('click', () => {
-          dialogs.alert('As experiências acumuladas demonstram que o surgimento do comércio virtual promove a alavancagem dos métodos utilizados na avaliação de resultados.').then(() => {
+          dialogs.alert('Lorem ipsum dolor sit amet, consectetur adipiscing elit.').then(() => {
+            console.log('closed')
+          })
+        })
+
+      document.getElementById('alert-button-custom')
+        .addEventListener('click', () => {
+          dialogs.alert('Vestibulum commodo nunc a mauris interdum, id fermentum sem consectetur. Proin quam lectus, venenatis eu sodales a, luctus eu sem. In et tincidunt nunc.', {
+              confirmText: 'Wow'
+            }).then(() => {
             console.log('closed')
           })
         })
 
       document.getElementById('confirm-button')
         .addEventListener('click', () => {
-          dialogs.confirm('Do you really want to leave?').then(result => {
+          dialogs.confirm('Donec quis leo vitae sem placerat sagittis. Aliquam vel luctus magna, nec maximus erat. Integer vitae tortor bibendum, suscipit velit eget, pellentesque nibh. Donec interdum volutpat quam, in ornare nibh finibus at. Suspendisse nec elit a lectus dictum eleifend.').then(result => {
+            console.log('result:', result)
+          })
+        })
+
+      document.getElementById('confirm-button-custom')
+        .addEventListener('click', () => {
+          dialogs.confirm('Morbi elementum ex vestibulum porttitor sodales. Nulla facilisi.', {
+            cancelText: 'Close',
+            confirmText: 'Wow'
+          }).then(result => {
             console.log('result:', result)
           })
         })

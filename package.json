@@ -4,6 +4,8 @@
   "description": "Promise-based confirm, alert and prompt dialogs",
   "main": "index.js",
   "scripts": {
+    "prelint": "prettier --single-quote --no-semi --no-bracket-spacing --trailing-comma none --write \"lib/**/*.js\" --write rollup.config.js --write \"test/**/*.js\"",
+    "lint": "xo --fix",
     "test": "browser-sync start -s \"test/visual\" -s \"dist\" --files \"dist/vanilla-dialogs.umd.min.js\" \"test/visual/**/*\"",
     "build": "rollup -c",
     "build:watch": "npm run build -- -w"
@@ -20,7 +22,6 @@
   },
   "homepage": "https://github.com/thiamsantos/vanilla-dialogs#readme",
   "devDependencies": {
-    "autoprefixer": "^7.1.2",
     "babel-core": "^6.25.0",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-env": "^1.6.0",
@@ -28,6 +29,7 @@
     "cssnano": "^3.10.0",
     "postcss-cssnext": "^3.0.2",
     "postcss-modules": "^0.8.0",
+    "prettier": "^1.5.3",
     "rollup": "^0.45.2",
     "rollup-plugin-babel": "^2.7.1",
     "rollup-plugin-commonjs": "^8.0.2",
@@ -35,9 +37,14 @@
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-postcss": "^0.5.3",
     "rollup-plugin-uglify": "^2.0.1",
-    "rollup-watch": "^4.3.1"
+    "rollup-watch": "^4.3.1",
+    "xo": "^0.18.2"
   },
-  "dependencies": {
-    "vanilla-commons": "^1.1.0"
+  "xo": {
+    "envs": [
+      "browser"
+    ],
+    "space": true,
+    "semicolon": false
   }
 }

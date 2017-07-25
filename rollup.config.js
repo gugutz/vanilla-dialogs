@@ -7,7 +7,6 @@ import postcss from 'rollup-plugin-postcss'
 import postcssModules from 'postcss-modules'
 import cssnano from 'cssnano'
 import cssnext from 'postcss-cssnext'
-import autoprefixer from 'autoprefixer'
 
 const cssExportMap = {}
 
@@ -19,19 +18,18 @@ export default {
   plugins: [
     postcss({
       plugins: [
-        autoprefixer({
+        cssnext({
           warnForDuplicates: false
         }),
-        cssnext(),
         postcssModules({
-          getJSON (id, exportTokens) {
-            cssExportMap[id] = exportTokens;
+          getJSON(id, exportTokens) {
+            cssExportMap[id] = exportTokens
           }
         }),
         cssnano()
       ],
-      getExport (id) {
-        return cssExportMap[id];
+      getExport(id) {
+        return cssExportMap[id]
       }
     }),
     nodeResolve(),
