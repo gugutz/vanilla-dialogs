@@ -51,4 +51,4 @@ confirm('Morbi elementum ex vestibulum porttitor sodales.', {
 
 ## License
 
-[MIT License](LICENSE.md) © [Thiago Santos](https://thiamsantos.github.io/)
+[MIT License](LICENSE) © [Thiago Santos](https://thiamsantos.github.io/)
