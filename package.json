@@ -2,7 +2,7 @@
   "name": "vanilla-dialogs",
   "version": "0.0.1",
   "description": "Promise-based confirm, alert and prompt dialogs",
-  "main": "index.js",
+  "main": "dist/vanilla-dialogs.umd.min.js",
   "scripts": {
     "prelint": "prettier --single-quote --no-semi --no-bracket-spacing --trailing-comma none --write \"lib/**/*.js\" --write rollup.config.js --write \"test/**/*.js\"",
     "lint": "xo --fix",
@@ -20,6 +20,9 @@
   "bugs": {
     "url": "https://github.com/thiamsantos/vanilla-dialogs/issues"
   },
+  "files": [
+    "dist"
+  ],
   "homepage": "https://github.com/thiamsantos/vanilla-dialogs#readme",
   "devDependencies": {
     "babel-core": "^6.25.0",
