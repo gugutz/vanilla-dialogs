@@ -21,6 +21,9 @@
     <button id="confirm-button-custom">
       Show confirm with custom text!
     </button>
+    <button id="prompt-button">Show prompt!</button>
+    <button id="prompt-button-validation">Show prompt with validation!</button>
+    <button id="prompt-button-custom-text">Show prompt with custom text!</button>
     <script src="vanilla-dialogs.umd.min.js"></script>
     <script>
       document.getElementById('alert-button')
@@ -51,6 +54,32 @@
           dialogs.confirm('Morbi elementum ex vestibulum porttitor sodales. Nulla facilisi.', {
             cancelText: 'Close',
             confirmText: 'Wow'
+          }).then(result => {
+            console.log('result:', result)
+          })
+        })
+
+      document.getElementById('prompt-button')
+        .addEventListener('click', () => {
+          dialogs.prompt('Donec quis leo vitae sem placerat sagittis?').then(result => {
+            console.log('result:', result)
+          })
+        })
+
+      document.getElementById('prompt-button-validation')
+        .addEventListener('click', () => {
+          dialogs.prompt('Donec quis leo vitae sem placerat sagittis?', {
+            regex: /\d$/g
+          }).then(result => {
+            console.log('result:', result)
+          })
+        })
+
+      document.getElementById('prompt-button-custom-text')
+        .addEventListener('click', () => {
+          dialogs.prompt('Donec quis leo vitae sem placerat sagittis?', {
+            cancelText: 'Wtf?',
+            confirmText: 'Send'
           }).then(result => {
             console.log('result:', result)
           })

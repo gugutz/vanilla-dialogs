@@ -25,7 +25,7 @@ $ npm install --save vanilla-dialogs
 ## Usage
 
 ```js
-import {alert, confirm} from 'vanilla-dialogs'
+import {alert, confirm, prompt} from 'vanilla-dialogs'
 
 alert('Lorem ipsum dolor sit amet.').then(() => {
   console.log('closed')
@@ -44,6 +44,23 @@ confirm('Donec quis leo vitae sem placerat sagittis.').then(result => {
 confirm('Morbi elementum ex vestibulum porttitor sodales.', {
   cancelText: 'Close',
   confirmText: 'Wow'
+}).then(result => {
+  console.log('result:', result)
+})
+
+prompt('Donec quis leo vitae sem placerat sagittis?').then(result => {
+  console.log('result:', result)
+})
+
+prompt('Donec quis leo vitae sem placerat sagittis?', {
+  regex: /\d$/g
+}).then(result => {
+  console.log('result:', result)
+})
+
+prompt('Donec quis leo vitae sem placerat sagittis?', {
+  cancelText: 'Wtf?',
+  confirmText: 'Send'
 }).then(result => {
   console.log('result:', result)
 })
