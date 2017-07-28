@@ -64,6 +64,12 @@ prompt('Donec quis leo vitae sem placerat sagittis?', {
 }).then(result => {
   console.log('result:', result)
 })
+
+prompt('Donec quis leo vitae sem placerat sagittis?', {
+  defaultValue: 'Hey man'
+}).then(result => {
+  console.log('result:', result)
+})
 ```
 
 ## License
