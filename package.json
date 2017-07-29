@@ -6,9 +6,14 @@
   "scripts": {
     "prelint": "prettier --single-quote --no-semi --no-bracket-spacing --trailing-comma none --write \"lib/**/*.js\" --write rollup.config.js --write \"test/**/*.js\"",
     "lint": "xo --fix",
-    "test": "browser-sync start -s \"test/visual\" -s \"dist\" --files \"dist/vanilla-dialogs.umd.min.js\" \"test/visual/**/*\"",
+    "test:visual": "browser-sync start -s \"test/visual\" -s \"dist\" --files \"dist/vanilla-dialogs.umd.min.js\" \"test/visual/**/*\"",
+    "test:unit": "jest",
+    "test:unit:watch": "jest --watch",
+    "test:watch": "run-p -r test:unit:watch test:visual build:watch",
+    "coverage": "jest --coverage",
     "build": "rollup -c",
-    "build:watch": "npm run build -- -w"
+    "build:watch": "npm run build -- -w",
+    "test": "npm run test:unit"
   },
   "repository": {
     "type": "git",
@@ -30,6 +35,8 @@
     "babel-preset-env": "^1.6.0",
     "browser-sync": "^2.18.12",
     "cssnano": "^3.10.0",
+    "jest": "^20.0.4",
+    "npm-run-all": "^4.0.2",
     "postcss-cssnext": "^3.0.2",
     "postcss-modules": "^0.8.0",
     "prettier": "^1.5.3",
@@ -45,9 +52,13 @@
   },
   "xo": {
     "envs": [
-      "browser"
+      "browser",
+      "jest"
     ],
     "space": true,
     "semicolon": false
+  },
+  "babel": {
+    "presets": ["env"]
   }
 }
