@@ -13,7 +13,8 @@
     "coverage": "jest --coverage",
     "build": "rollup -c",
     "build:watch": "npm run build -- -w",
-    "test": "npm run test:unit"
+    "test": "npm run test:unit",
+    "precommit": "npm test && lint-staged"
   },
   "repository": {
     "type": "git",
@@ -35,7 +36,9 @@
     "babel-preset-env": "^1.6.0",
     "browser-sync": "^2.18.12",
     "cssnano": "^3.10.0",
+    "husky": "^0.14.3",
     "jest": "^20.0.4",
+    "lint-staged": "^4.0.2",
     "npm-run-all": "^4.0.2",
     "postcss-cssnext": "^3.0.2",
     "postcss-modules": "^0.8.0",
@@ -59,6 +62,11 @@
     "semicolon": false
   },
   "babel": {
-    "presets": ["env"]
+    "presets": [
+      "env"
+    ]
+  },
+  "lint-staged": {
+    "*.js": ["npm run lint", "git add"]
   }
 }
