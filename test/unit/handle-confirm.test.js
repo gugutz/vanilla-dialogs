@@ -1,4 +1,5 @@
-import {handleConfirm, PROMPT_TYPE} from '../../lib/utils'
+import handleConfirm from '../../lib/core/handle-confirm'
+import {PROMPT_TYPE} from '../../lib/core/constants'
 
 describe('handleConfirm', () => {
   it('should stop the propagation of the event', () => {
