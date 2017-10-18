@@ -26,7 +26,14 @@ export default {
             cssExportMap[id] = exportTokens
           }
         }),
-        cssnano()
+        cssnano({
+          discardUnused: {
+            fontFace: false,
+            keyframes: false
+          },
+          zindex: false,
+          reduceIdents: false
+        })
       ],
       getExport(id) {
         return cssExportMap[id]
