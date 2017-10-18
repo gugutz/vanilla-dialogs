@@ -1,6 +1,6 @@
 {
   "name": "vanilla-dialogs",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Promise-based confirm, alert and prompt dialogs",
   "main": "dist/vanilla-dialogs.umd.min.js",
   "scripts": {
@@ -67,6 +67,9 @@
     ]
   },
   "lint-staged": {
-    "*.js": ["npm run lint", "git add"]
+    "*.js": [
+      "npm run lint",
+      "git add"
+    ]
   }
 }
